@@ -30,4 +30,18 @@ describe DigraphProcessor do
 
   end
 
+  describe '#clean' do
+
+    it 'should clean fill character X from TREXE and return TREE' do
+
+      pre_clean_text = 'TREXE'
+
+      post_clean_text = processor.clean(pre_clean_text)
+
+      expect(post_clean_text).to eq('TREE')
+
+    end
+
+  end
+
 end

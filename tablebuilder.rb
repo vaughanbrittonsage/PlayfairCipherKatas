@@ -24,7 +24,7 @@ class TableBuilder
 
     #generate the alphabet and remove the Q character
     alphabet = generate_alphabet
-    alphabet.delete('Q')
+    alphabet.delete('J')
 
     table = PlayFairTable.new
 

@@ -54,12 +54,12 @@ describe TableBuilder do
       expect(table.get_value(0,2)).to eq('F')
       expect(table.get_value(1,2)).to eq('G')
       expect(table.get_value(2,2)).to eq('I')
-      expect(table.get_value(3,2)).to eq('J')
-      expect(table.get_value(4,2)).to eq('K')
+      expect(table.get_value(3,2)).to eq('K')
+      expect(table.get_value(4,2)).to eq('M')
 
-      expect(table.get_value(0,3)).to eq('M')
-      expect(table.get_value(1,3)).to eq('N')
-      expect(table.get_value(2,3)).to eq('P')
+      expect(table.get_value(0,3)).to eq('N')
+      expect(table.get_value(1,3)).to eq('P')
+      expect(table.get_value(2,3)).to eq('Q')
       expect(table.get_value(3,3)).to eq('S')
       expect(table.get_value(4,3)).to eq('T')
 

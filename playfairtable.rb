@@ -1,9 +1,11 @@
 class PlayFairTable
 
   attr_accessor :content
+  attr_accessor :cells
 
   def initialize
     @content = [Array.new(5),Array.new(5),Array.new(5),Array.new(5),Array.new(5)]
+    @cells = []
   end
 
   def set_value(column_index, row_index, value)
@@ -14,6 +16,16 @@ class PlayFairTable
 
     #set the value to the matrix
     @content[column_index][row_index] = value
+
+    #remove previous cell
+    @cells.delete_if { |cell| cell.column_index == column_index && cell.row_index == row_index }
+
+    #create the cell
+    cell = TableCell.new
+    cell.column_index = column_index
+    cell.row_index = row_index
+    cell.value = value
+    @cells.push(cell)
 
   end
 
@@ -26,6 +38,10 @@ class PlayFairTable
     #get the corresponding value from the matrix
     @content[column_index][row_index]
 
+  end
+
+  def get_cell(value)
+    @cells.find { |cell| cell.value == value }
   end
 
   private

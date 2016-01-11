@@ -1,3 +1,4 @@
+require 'pry'
 class DigraphProcessor
 
   def initialize
@@ -31,6 +32,36 @@ class DigraphProcessor
 
     #uppercase the text and return the digraph pairs
     processed_text.upcase.scan(/../)
+
+  end
+
+  def clean(text)
+
+    char_index = 0
+    chars = text.split('')
+    cleaned_text = ''
+
+    chars.each do |char|
+
+      output = true
+
+      if char == @fill_char && char_index > 0 && char_index + 1 < chars.length
+
+        if chars[char_index - 1] == chars[char_index + 1]
+          output = false
+        end
+
+      end
+
+      if output == true
+        cleaned_text += char
+      end
+
+      char_index += 1
+
+    end
+
+    cleaned_text
 
   end
 
