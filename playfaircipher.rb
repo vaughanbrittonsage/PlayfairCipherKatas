@@ -76,7 +76,7 @@ class PlayFairCipher
       new_pair = ''
 
       #below conditional block could be refactored into reusable conditional block due to similarities with encrypt logic, however
-      #I have intentionally left this separated to allow different comments to explain the logic easier
+      #I have intentionally left this separated to allow different comments to allow easier explanation of the logic and the differences
 
       #check if both characters are in the same column
       if cell1.column_index == cell2.column_index
